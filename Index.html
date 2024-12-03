@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cripto Info 2024</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/73a9d1f6fa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Menú hamburguesa funcional -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Navbar lateral -->
+    <aside class="sidebar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="./assets/img/Cripto News.png" alt="Logo" />
+        <h2>Cripto News 2024</h2>
+      </div>
+ <!-- Enlaces de Navbar -->
+      <nav>
+        <ul>
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <a href="#home">Inicio</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <a href="#gallery">Informes</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-bolt"></i>
+            <a href="#about">Cripto Actual</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-address-book"></i>
+            <a href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <section id="home">
+        <div class="titulo">
+          <h1>Bienvenido a Cripto News 2024</h1>
+          <p>
+            Informacion actual sobre el movimiento de las principales
+            criptomonedas del mundo.
+          </p>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <div class="cards">
+          <div class="card">
+            <img
+              src="./assets/img/BTCUSD_2024-12-02_19-43-23.png"
+              alt="Bitcoin"
+            />
+            <div class="description">
+              Bitcoin
+              <p>20%</p>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 20%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./assets/img/ETHUSDT_2024-12-02_19-41-46.png"
+              alt="Ethereum"
+            />
+            <div class="description">
+              Ethereum
+              <p>46%</p>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 46%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./assets/img/SOLUSDT_2024-12-02_19-47-01.png"
+              alt="Solana"
+            />
+            <div class="description">
+              Solana
+              <p>90%</p>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 90%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/BNBUSDT_2024-12-02_19-48-29.png" alt="BNB" />
+            <div class="description">
+              BNB
+              <p>49%</p>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 49%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./assets/img/DOGEUSDT_2024-12-02_19-50-15.png"
+              alt="Doge"
+            />
+            <div class="description">
+              Doge
+              <p>74%</p>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 74%"></div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./assets/img/ADAUSDT_2024-12-02_19-52-50.png"
+              alt="Cardano"
+            />
+            <div class="description">
+              Cardano
+              <p>38%</p>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="--progress: 38%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Widget de cripto -->
+    <div class="crypto-widget">
+      <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+      <gecko-coin-price-marquee-widget
+        locale="es"
+        dark-mode="true"
+        transparent-background="true"
+        outlined="true"
+        coin-ids=""
+        initial-currency="usd"
+      ></gecko-coin-price-marquee-widget>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div></div>
+      <p>
+        Cripto News 2024. Todos los derechos reservados.
+        <i class="fa-regular fa-registered"></i>
+      </p>
+      <div class="social-links">
+        <i class="fa-brands fa-facebook"></i>
+        <a href="#">Facebook</a>
+        <i class="fa-brands fa-square-twitter"></i>
+        <a href="#">Twitter</a>
+        <i class="fa-brands fa-instagram"></i>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+  </body>
+</html>

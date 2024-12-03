@@ -1,0 +1,290 @@
+/* formato o reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  animation: pulseColor 3s ease-in-out infinite;
+  background-color: transparent;
+  padding: 20px;
+}
+
+/* Animación de cambio de color */
+@keyframes pulseColor {
+  0%,
+  100% {
+    color: rgba(209, 203, 209, 1); /* Color inicial, un gris suave */
+  }
+  40% {
+    color: rgba(5, 239, 67, 1); /* Color intermedio, verde brillante */
+  }
+  60% {
+    color: rgba(8, 137, 249, 1); /* Color intermedio, azul vibrante */
+  }
+  100% {
+    color: rgba(209, 203, 209, 1); /* Vuelve al color inicial */
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background-color: #333;
+  border-radius: 5px;
+  z-index: 1000;
+  cursor: pointer;
+}
+/* Navbar lateral */
+.sidebar {
+  background-color: #333;
+  color: white;
+  width: 250px;
+  flex-shrink: 0;
+  position: fixed;
+  height: 100%;
+  padding: 10px;
+  border-right: 4px solid #ff9900;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  width: 200px;
+  height: auto;
+  animation: fadeIn 5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar en modo desktop */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+    display: block;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+}
+
+/* Navbar en modo móvil */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    padding: 12px;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    background-color: #333;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 500;
+  }
+
+  .sidebar .logo {
+    display: none;
+  }
+
+  .sidebar ul {
+    display: none;
+  }
+
+  .menu-toggle:checked ~ .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px 0;
+  }
+
+  .menu-toggle:checked ~ .sidebar ul li {
+    margin: 10px 0;
+  }
+
+  .main-content {
+    margin-top: 50px;
+  }
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 20px;
+  flex: 1;
+  transition: margin-left 0.3s ease-in-out;
+}
+.titulo {
+  padding-top: 10px;
+  color: #ff9900;
+  animation: fadeIn 5s ease-out;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Galería */
+.gallery {
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, background-image 0.5s ease;
+  background-image: linear-gradient(45deg, #ff9900, #363636);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(45deg, #4c8eaf, #8e44ad);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card .description {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+/* Barra de progreso */
+.progress-container {
+  position: relative;
+  height: 10px;
+  background-color: #f0f0f0;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #f44336;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.card:hover .progress-bar {
+  width: var(--progress);
+  background-color: #4caf50;
+}
+
+/* Barra widget */
+.crypto-widget {
+  background-color: #333;
+  z-index: 1000;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  z-index: 1000;
+  border-top: 4px solid #ff9900;
+}
+
+.footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer .social-links a:hover {
+  text-decoration: underline;
+}
